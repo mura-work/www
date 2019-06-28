@@ -1,0 +1,46 @@
+<main>
+	<div class="main-visual">
+		<div class="main-visual-content">
+			<p class="main-visual-text">OpenQuestion
+			<%= image_tag('main.jpg', :width => '1300', :height => '600') %></p>
+		</div>
+	</div>
+
+	<div class="top-message col-xs-12">
+		<h1>- STORY -</h1>
+		<br>
+		<h1>人数が急増して、</h1>
+		<br>
+		<p><h1>近くの人が何も考えているかも正直わからない状況です。</h1></p>
+		<br>
+		<p><h1>これは組織にとって良いこととはいえません。</h1></p>
+		<br>
+		<p><h1>そこで、近くの人が何を考えているのか</h1></p>
+		<br>
+		<p><h1>オープンにしたいと思い、</h1></p>
+		<br>
+		<p><h1>このOpenQuestionというサービスを作りました。</h1></p>
+	</div>
+
+	<section class="blog">
+		<div class="box1">
+			<%= link_to new_book_path do %>
+				<%= image_tag('quiestion.png', :width => '250', :height => '150') %>
+				<button type="button" class="btn btn-info">質問する</button>
+			<% end %>
+		</div>
+		<div class="box1">
+			<%= link_to books_path do %>
+				<%= image_tag('communicate.png', :width => '250', :height => '150') %>
+				<button type="button" class="btn btn-info">過去の質問</button>
+			<% end %>
+		</div>
+		<div class="box1">
+			<%= link_to users_path do %>
+				<%= image_tag('person.png', :width => '250', :height => '150') %>
+				<button type="button" class="btn btn-info">GS一覧</button>
+			<% end %>
+		</div>
+</main>
+
+

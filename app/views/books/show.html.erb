@@ -1,0 +1,89 @@
+<!-- ユーザー詳細 ----------------------------------------------------------->
+
+<!-- ユーザー詳細　-------------------------------------------------------------------- -->
+
+
+<!-- 質問内容　---------------------------------------------------------------- -->
+<div class="row">
+
+<div class="col-xs-offset-2 col-xs-8 col-xs-offset-2">
+	<h3>質問内容</h3>
+	<div class="box2">
+		<pre><%= @book.body %></pre>
+		<span class="comment-meta">
+				  <span class="comment-date"><%= @book.created_at.strftime('%Y/%m/%d') %></span>
+				</span>
+		<% if current_user.admin? %>
+			<td><button type="button" class="btn btn-danger"><%= link_to 'Destroy', book_path(@book), method: :delete  %></button></td>
+        <% end %>
+	</div>
+</div>
+
+</div>
+
+<!-- 質問内容　-------------------------------------------------------------------- -->
+
+<!-- いいねボタン -------------------------------------------------------------------->
+
+<!-- いいねボタン ----------------------------------------------------------------------- -->
+
+</div>
+
+
+<div class="row">
+<div class="col-xs-2">
+</div>
+
+
+<div class="col-xs-8">
+<table class="table table-striped">
+
+<!-- コメントを表示する ----------------------------------------------------------------------------- -->
+<% @book.book_comments.each do |book_comment| %>
+	<tr>
+		<th><%= attachment_image_tag @book.user, :image, :fill, 50, 50 ,class: "img-circle" %><br>
+			<%= book_comment.user.name %><br>
+		<span class="comment-meta">
+			  <span class="comment-date"><%= book_comment.created_at.strftime('%Y/%m/%d') %></span>
+			</span></th>
+		<th><pre><div class="comment-entry"><%= book_comment.comment %></div></pre></th>
+	</tr>
+<% end %>
+<!-- コメントを表示する ------------------------------------------------------------------------------ -->
+
+</table>
+</div>
+
+<br>
+<br>
+
+
+
+<div class="col-xs-2">
+</div>
+
+</div>
+
+
+
+<div class="row">
+<div class="col-xs-12">
+
+<!-- コメントを投稿する -->
+<% if current_user.admin? %>
+
+<%= form_for [@book, @book_comment] do |f| %>
+<%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
+<%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+<% end %>
+
+<% end %>
+<!-- コメントを投稿する -->
+
+</div>
+</div>
+
+
+
+
+

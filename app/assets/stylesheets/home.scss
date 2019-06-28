@@ -1,0 +1,49 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+main-visual {
+	width: 100%;
+	height: 682px;
+	float: none;
+}
+
+main-visual-content {
+	width: 100%;
+	height: 234px;
+	text_align: center;
+}
+
+main-visual-text {
+	color: #fff;
+}
+
+.box1{
+    margin-top: 50px;
+    position: relative;
+    padding: 10px 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+    float: left;
+}
+.box1:before, .box1:after{
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: black;
+}
+.box1:before {left: 10px;}
+.box1:after {right: 10px;}
+.box1 p {
+    margin-right: 10px;
+    padding: 10px;
+}
+
+body {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+}

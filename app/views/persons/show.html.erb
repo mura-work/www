@@ -1,0 +1,52 @@
+<div class="col-xs-offset-1 col-xs-10">
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<tr>
+			<td><%= attachment_image_tag @person.user, :image, :fill, 60, 60, fallback: "no_image.jpg" %></td>
+			<td><%= @person.user.name %><br><%= @person.user.introduction %></td>
+
+			<% if current_user.admin? %>
+			<td><%= link_to "編集", edit_user_path(@user) %></td>
+			<% end %>
+		</tr>
+	</tbody>
+</table>
+</div>
+<div class="col-xs-offset-1"></div>
+
+
+
+<div class="row">
+<div class="col-xs-offset-2 col-xs-8">
+	<h4><%= @person.user.name %>に寄せられた質問</h4>
+	<table class="table table-striped">
+		<% @books.person.each do |book| %>
+		<div class="col-xs-8">
+		<tr>
+			<th>質問内容</th>
+			<td><pre><%= link_to book.body, book_path(book.id) %></pre></td>
+		</tr>
+
+		<tr>
+			<th>
+				<div id="favorite_buttons_<%= book.id %>">
+	               <%= render partial: 'favorites/favorite', locals: { book: book} %>
+	            </div>
+			</th>
+		</tr>
+		</div>
+		<% end %>
+	</table>
+</div>
+<div class="col-xs-2"></div>
+
+</div>
+

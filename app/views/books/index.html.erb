@@ -1,0 +1,47 @@
+
+
+<h2>みんなの質問</h2>
+
+<div class="row">
+	<div class="col-xs-offset-3 col-xs-6">
+<div class="content_box">
+<p>検索</p>
+<%= form_tag(search_books_path, method: "get") do %>
+  <%= select_tag(:person_id, options_for_select([["花本静来", 1], ["和佐田遼", 2],  ["石井直斗", 3], ["古谷圭介", 4]], ["選択してください", :prompt])) %>
+  <%= submit_tag "絞り込み" %>
+<% end %>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="row">
+	<div class="col-xs-offset-1 col-xs-10">
+		<div class="main_contents">
+			<% @books.each do |book| %>
+				<div class="box2">
+				<pre><%= link_to book.body, book_path(book.id) %></pre>
+				<span class="comment-meta">
+				  <span class="comment-date"><%= book.created_at.strftime('%Y/%m/%d') %></span>
+				</span>
+<!-- ------------------------聞きたいボタン---------------------------------- -->
+
+					<!-- <div class="col-xs-12">
+					<div id="favorites_buttons_<% book.id %>">
+						<%= render partial: 'books/books', locals: { book: book} %>
+					</div>
+					</div>-->
+
+<!-- -----------------------------聞きたいボタン----------------------------- -->
+				</div>
+			<% end %>
+		</div>
+	</div>
+	<div class="col-xs-1"></div>
+
+</div>
+
+

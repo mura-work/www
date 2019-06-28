@@ -1,0 +1,38 @@
+<div class="row">
+	<div class="col-xs-offset-2 col-xs-8">
+	<%= form_for(@book_new)do |f| %>
+	  <% if @book_new.errors.any? %>
+	      <div id="error_explanation">
+	        <h2><%= @book_new.errors.count %> error prohibited this user from being saved: </h2>
+	        <ul>
+	        <% @book_new.errors.full_messages.each do |message| %>
+	          <li><%= message %></li>
+	       <% end %>
+	        </ul>
+	      </div>
+	  <% end %>
+
+
+
+
+		<h4>質問をする</h4>
+		<div class="col-xs-12">
+		<div class="field row">
+			<%= f.label :質問内容 %><br>
+			<textarea class="col-xs-12 book_body" name="book[body]" id="book_body", class: "book_body", placeholder="ここに質問を記入してください"></textarea>
+		</div><br>
+		</div>
+		<div class="col-xs-3">
+		<div class="field row">
+			<%= f.label :タグ %><br>
+			<%= f.select :person_id, [["花本静来", 1], ["和佐田遼", 2],  ["石井直斗", 3], ["古谷圭介", 4]],  :prompt => "選択してください" %>
+		</div><br>
+		</div>
+		<div class="action row">
+			<input type="submit" name="commit" value="質問を送る" class="btn btn-primary col-xs-12" data-disable-with="Create Book">
+		</div>
+	<% end %>
+	</div>
+
+	<div class="col-xs-2"></div>
+</div>
