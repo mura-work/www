@@ -74,3 +74,4 @@ group :development, :test do
   gem 'hirb-unicode'
 end
 
+gem 'acts-as-taggable-on', '~> 6.0'

@@ -5,12 +5,16 @@ class BooksController < ApplicationController
   	@books = Book.all
     @book = Book.find_by(params[:book_id])
     @user = @book.user
+    if params[:tag]
+      @books = Book.tagged_with(params[:tag])
+    else
+      @books = Book.all
+    end
   end
 
   def search
     @books = Book.where("person_id = ?", params[:person_id])
     render 'index'
-
   end
 
   def new
@@ -47,8 +51,9 @@ class BooksController < ApplicationController
 
   private
   def book_params
-  	params.require(:book).permit(:body, :person_id)
+  	params.require(:book).permit(:body, :person_id, :tag_list)
   end
+
 end
 
 

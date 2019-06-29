@@ -15,19 +15,50 @@
 
 
 
-		<h4>質問をする</h4>
+		<h2>質問をする</h2>
 		<div class="col-xs-12">
 		<div class="field row">
 			<%= f.label :質問内容 %><br>
 			<textarea class="col-xs-12 book_body" name="book[body]" id="book_body", class: "book_body", placeholder="ここに質問を記入してください"></textarea>
 		</div><br>
 		</div>
+
 		<div class="col-xs-3">
 		<div class="field row">
-			<%= f.label :タグ %><br>
+			<%= f.label :誰に答えて欲しいか %><br>
 			<%= f.select :person_id, [["花本静来", 1], ["和佐田遼", 2],  ["石井直斗", 3], ["古谷圭介", 4]],  :prompt => "選択してください" %>
 		</div><br>
 		</div>
+
+		<div class="col-xs-5">
+		<div class="field row">
+			<%= f.label :ジャンル（下から選んで記入してください！） %><br>
+			<%= f.text_field :tag_list %>
+		</div><br>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-offset-2 col-xs-8">
+				<table class="table table-striped">
+					<tr>
+						<th>就活</th>
+						<th>留学</th>
+						<th>悩み</th>
+					</tr>
+					<tr>
+						<td>大学生活</td>
+						<td>将来</td>
+						<td>趣味</td>
+					</tr>
+					<tr>
+						<td>インターン</td>
+						<td>仕事</td>
+						<td>その他</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
 		<div class="action row">
 			<input type="submit" name="commit" value="質問を送る" class="btn btn-primary col-xs-12" data-disable-with="Create Book">
 		</div>

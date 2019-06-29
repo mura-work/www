@@ -27,13 +27,12 @@
 				<span class="comment-meta">
 				  <span class="comment-date"><%= book.created_at.strftime('%Y/%m/%d') %></span>
 				</span>
+				<p>ジャンル: <%= raw(book.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></p>
 <!-- ------------------------聞きたいボタン---------------------------------- -->
 
-					<!-- <div class="col-xs-12">
 					<div id="favorites_buttons_<% book.id %>">
 						<%= render partial: 'books/books', locals: { book: book} %>
 					</div>
-					</div>-->
 
 <!-- -----------------------------聞きたいボタン----------------------------- -->
 				</div>
