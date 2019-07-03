@@ -14,8 +14,6 @@ Rails.application.routes.draw do
   root 'home#top'
   post '/users/:id/update' => 'users#update'
   delete 'books/:id' => 'books#destroy', as: 'destroy_book'
-  post   '/favorite/:book_id' => 'favorites#create',   as: 'favorite'
-  delete '/favorite/:book_id' => 'favorites#destroy', as: 'destroy'
   get 'tags/:tag', to: 'books#index', as: :tag
 end
 

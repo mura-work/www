@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_29_034434) do
+ActiveRecord::Schema.define(version: 2019_07_03_002731) do
 
   create_table "book_comments", force: :cascade do |t|
     t.text "comment"
@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(version: 2019_06_29_034434) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_id"
-    t.integer "likes_count"
     t.text "body"
     t.integer "user_id"
     t.integer "book_id"
     t.integer "person_id"
+    t.integer "favorites_count"
     t.index ["person_id"], name: "index_books_on_person_id"
   end
 

@@ -7,9 +7,13 @@ class User < ApplicationRecord
   has_many :books, dependent: :destroy
   has_many :book_comments, dependent: :destroy
   has_many :favorites, dependent: :destroy
-  has_many :favorite_books, through: :favorites, source: :book
+  has_many :favorited_books, through: :favorites, source: :book
   has_many :persons, dependent: :destroy
 
   attachment :image
+
+  def already_favorited?(book)
+    self.favorites.exists?(book_id: book.id)
+  end
 
 end

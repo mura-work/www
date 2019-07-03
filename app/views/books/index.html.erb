@@ -30,9 +30,9 @@
 				<p>ジャンル: <%= raw(book.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></p>
 <!-- ------------------------聞きたいボタン---------------------------------- -->
 
-					<div id="favorites_buttons_<% book.id %>">
+
 						<%= render partial: 'books/books', locals: { book: book} %>
-					</div>
+
 
 <!-- -----------------------------聞きたいボタン----------------------------- -->
 				</div>
@@ -43,4 +43,5 @@
 
 </div>
 
+<%= paginate @books, class: "paginate" %>
 

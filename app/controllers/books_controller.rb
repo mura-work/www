@@ -2,13 +2,14 @@ class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-  	@books = Book.all
+  	@books = Book.page(params[:page])
     @book = Book.find_by(params[:book_id])
     @user = @book.user
+    @favorites = Favorite.where(book_id: params[:id])
     if params[:tag]
       @books = Book.tagged_with(params[:tag])
     else
-      @books = Book.all
+      @books = Book.page(params[:page])
     end
   end
 

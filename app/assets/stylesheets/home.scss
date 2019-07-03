@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.container{
+    width: 1024px;
+    margin: 0 auto;
+}
+
 main-visual {
 	width: 100%;
 	height: 682px;
@@ -47,3 +52,100 @@ body {
     padding-right: 10px;
     padding-left: 10px;
 }
+
+
+
+
+
+.blog {
+    text-align: center;
+}
+
+.blog-main {
+    width: 100%;
+    height: 200px;
+    background-color: green;
+}
+
+.blog-title {
+    padding-top: 50px;
+}
+
+.blog-contents {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+}
+
+.blog-contents h3 {
+    font-weight: bold;
+}
+
+.blog-contents-top {
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.blog-box-block {
+    width: 100%;
+}
+
+.blog-box {
+    width: 500px;
+    margin-top: 50px;
+    float: left;
+}
+
+
+
+
+
+.main-contents {
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.main-contents-img {
+    width: 300px;
+    height: 200px;
+
+}
+
+.main-contents-box {
+    padding-top: 20px;
+    padding-bottom: 10px;
+     text-align: left;
+}
+
+.main-contents-title {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 30px;
+    display: block;
+    font-weight: bold;
+    padding-top: 50px;
+}
+
+.circleNumber {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    background: #41C9B4;
+    border-radius: 100px;
+    margin-right: 10px;
+}
+
+.main-contents-info p {
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
