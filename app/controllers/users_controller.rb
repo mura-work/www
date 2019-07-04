@@ -2,12 +2,12 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-      @users = User.where(params[:admin])
+
+      @users = User.where(person_id: ["1","2","3","4","5"])
   end
 
   def show
   	@user = User.find(params[:id])
-    @user.books = Book.where(params[:person_id])
   end
 
   def edit
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-  	params.require(:user).permit(:name, :image, :introduction)
+  	params.require(:user).permit(:name, :image, :main_image, :introduction, :career, :wants, :skill, :license, :hobby)
   end
 end
 

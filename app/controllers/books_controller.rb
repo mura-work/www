@@ -2,12 +2,14 @@ class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-  	@books = Book.page(params[:page])
+  	@books = Book.order(favorites_count: :desc).page(params[:page])
+    @books = Book.where("person_id = ?", params[:person_id])
     @book = Book.find_by(params[:book_id])
     @user = @book.user
     @favorites = Favorite.where(book_id: params[:id])
     if params[:tag]
       @books = Book.tagged_with(params[:tag])
+      @books = Book.page(params[:page])
     else
       @books = Book.page(params[:page])
     end
@@ -15,6 +17,7 @@ class BooksController < ApplicationController
 
   def search
     @books = Book.where("person_id = ?", params[:person_id])
+    @books = Book.page(params[:page])
     render 'index'
   end
 
@@ -52,7 +55,7 @@ class BooksController < ApplicationController
 
   private
   def book_params
-  	params.require(:book).permit(:body, :person_id, :tag_list)
+  	params.require(:book).permit(:body, :person_id, :tag_list, :favorites_count)
   end
 
 end

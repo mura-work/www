@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :persons, dependent: :destroy
 
   attachment :image
+  attachment :main_image
 
   def already_favorited?(book)
     self.favorites.exists?(book_id: book.id)

@@ -7,7 +7,7 @@ class Book < ApplicationRecord
 	validates :person_id, presence:true
 	validates :body, presence:true
 
-	default_scope -> { order(created_at: :desc) }
+	default_scope { order(created_at: :desc) }
 
 
 	acts_as_taggable_on :labels

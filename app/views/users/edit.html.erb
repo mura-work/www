@@ -1,15 +1,29 @@
-<h1>ユーザー編集</h1>
+<h1>ユーザー情報編集</h1>
 
+<div class="col-xs-12">
 <%= form_for(@user) do |f| %>
 
-
-
-	<h4>Name</h4>
+	<h4>ヘッダー画像</h4>
+	<%= f.attachment_field :main_image %>
+	<h4>名前</h4>
 	<%= f.text_field :name %>
-	<h4>Image</h4>
+	<h4>アイコン</h4>
 	<%= f.attachment_field :image %>
-	<h4>Introduction</h4>
-	<%= f.text_area :introduction %><br>
+	<h4>自己紹介</h4>
+	<%= f.text_area :introduction , :class => "col-xs-12" %><br>
+	<h4>経歴</h4>
+	<%= f.text_area :career , :class => "col-xs-12" %><br>
+	<h4>これからやろうとしていること</h4>
+	<%= f.text_area :wants , :class => "col-xs-12" %><br>
+	<h4>強み・特徴・スキル</h4>
+	<%= f.text_area :skill , :class => "col-xs-12" %><br>
+	<h4>資格</h4>
+	<%= f.text_area :license , :class => "col-xs-12" %><br>
+	<h4>趣味</h4>
+	<%= f.text_area :hobby , :class => "col-xs-12" %><br>
+
 	<%= f.submit 'ユーザー情報を更新する', class: 'btn btn-primary' %>
 
 <% end %>
+
+</div>
