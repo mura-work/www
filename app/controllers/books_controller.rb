@@ -2,23 +2,23 @@ class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-  	@books = Book.order(favorites_count: :desc).page(params[:page])
-    @books = Book.where("person_id = ?", params[:person_id])
+    @books = Book.where("person_id = ?", params[:person_id]).page(params[:page]).order(params[:favorites_count])
     @book = Book.find_by(params[:book_id])
     @user = @book.user
     @favorites = Favorite.where(book_id: params[:id])
     if params[:tag]
-      @books = Book.tagged_with(params[:tag])
-      @books = Book.page(params[:page])
+      @books = Book.tagged_with(params[:tag]).page(params[:page])
     else
       @books = Book.page(params[:page])
     end
   end
 
   def search
-    @books = Book.where("person_id = ?", params[:person_id])
-    @books = Book.page(params[:page])
+    @books = Book.where("person_id = ?", params[:person_id]).page(params[:page])
     render 'index'
+  end
+
+  def research
   end
 
   def new

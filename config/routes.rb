@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
     resource :book_comments, only: [:create, :destroy]
     get "search", on: :collection
+    get "research", on: :collection
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'books/top'

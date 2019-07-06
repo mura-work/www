@@ -1,20 +1,24 @@
-
-
 <h2>みんなの質問</h2>
 
 <div class="row">
-	<div class="col-xs-offset-3 col-xs-6">
-<div class="content_box">
-<p>検索</p>
-<%= form_tag(search_books_path, method: "get") do %>
-  <%= select_tag(:person_id, options_for_select([["花本静来", 1], ["和佐田遼", 2],  ["石井直斗", 3], ["古谷圭介", 4]], ["選択してください", :prompt])) %>
-  <%= submit_tag "絞り込み" %>
-<% end %>
-</div>
-</div>
-</div>
+  <div class="col-xs-offset-3 col-xs-6">
+	<div class="content_box">
+	<p>ユーザー絞り込み</p>
+	<%= form_tag(search_books_path, method: "get") do %>
+	  <%= select_tag(:person_id, options_for_select([["花本静来", 1], ["和佐田遼", 2],  ["石井直斗", 3], ["古谷圭介", 4]]), class: 'select_action') %>
+	  <%= submit_tag "絞り込み" %>
+	<% end %>
+	</div>
 
-
+	<div class="content_box_search">
+	<p>聞きたい順</p>
+	<%= form_tag(research_books_path, method: "get") do %>
+	  <%= select_tag(:favorites_count, options_for_select([["聞きたい順","favorites_count"]]), class: 'select_action') %>
+	  <%= submit_tag "絞り込み" %>
+	<% end %>
+	</div>
+  </div>
+</div>
 
 
 
@@ -24,13 +28,15 @@
 			<% @books.each do |book| %>
 				<div class="box2">
 				<pre><%= link_to book.body, book_path(book.id) %></pre>
+				<div class="category">ジャンル: <%= raw(book.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></div>
 				<span class="comment-meta">
 				  <span class="comment-date"><%= book.created_at.strftime('%Y/%m/%d') %></span>
 				</span>
-				<div class="category">ジャンル: <%= raw(book.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %>
 <!-- ------------------------聞きたいボタン---------------------------------- -->
 
-							<div style="text-align: right"><%= render partial: 'books/books', locals: { book: book} %></div></div>
+				<div class="map">
+					<span><%= render partial: 'books/books', locals: { book: book} %></span>
+				</div>
 
 <!-- -----------------------------聞きたいボタン----------------------------- -->
 				</div>
