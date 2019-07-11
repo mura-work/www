@@ -2,10 +2,10 @@ class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @books = Book.where("person_id = ?", params[:person_id]).page(params[:page]).order(params[:favorites_count])
+    @books = Book.order(favorites_count: :DESC).order(created_at: :DESC).page(params[:page])
     @book = Book.find_by(params[:book_id])
     @user = @book.user
-    @favorites = Favorite.where(book_id: params[:id])
+    @favorites = Favorite.where(user_id: session[:user_id], book_id: @book.id)
     if params[:tag]
       @books = Book.tagged_with(params[:tag]).page(params[:page])
     else
@@ -14,11 +14,19 @@ class BooksController < ApplicationController
   end
 
   def search
-    @books = Book.where("person_id = ?", params[:person_id]).page(params[:page])
-    render 'index'
+      @books = Book.where("person_name = ?", params[:person_name]).page(params[:page])
+      @bookd = Book.find_by("person_name = ?", params[:person_name])
+      render :index, locals: { bookd: @bookd }
   end
 
-  def research
+  def books
+    person_id_first = Person_idName.find(1)
+    @person_id = params[person_id] || book_first
+    @books = Book.where("person_id = ?", params[:person_id]).page(params[:page])
+  end
+
+  def book_search
+      person_id.name.all.map{|person_id_name| [person_id_name.name, person_id_name.id]}
   end
 
   def new
@@ -32,8 +40,8 @@ class BooksController < ApplicationController
         flash[:notice] = "質問を作成しました"
   	    redirect_to books_path
     else
-        @books = Book.all
-        render "index"
+        @book_new = Book.new(book_params)
+        render "new"
     end
   end
 
@@ -55,7 +63,11 @@ class BooksController < ApplicationController
 
   private
   def book_params
-  	params.require(:book).permit(:body, :person_id, :tag_list, :favorites_count)
+  	params.require(:book).permit(:body, :person_name, :tag_list)
+  end
+
+  def search_params
+    params.require(:q).permit(:person_name)
   end
 
 end

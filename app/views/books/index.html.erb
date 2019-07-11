@@ -3,22 +3,20 @@
 <div class="row">
   <div class="col-xs-offset-3 col-xs-6">
 	<div class="content_box">
-	<p>ユーザー絞り込み</p>
-	<%= form_tag(search_books_path, method: "get") do %>
-	  <%= select_tag(:person_id, options_for_select([["花本静来", 1], ["和佐田遼", 2],  ["石井直斗", 3], ["古谷圭介", 4]]), class: 'select_action') %>
-	  <%= submit_tag "絞り込み" %>
-	<% end %>
-	</div>
-
-	<div class="content_box_search">
-	<p>聞きたい順</p>
-	<%= form_tag(research_books_path, method: "get") do %>
-	  <%= select_tag(:favorites_count, options_for_select([["聞きたい順","favorites_count"]]), class: 'select_action') %>
+	<p>各GSメンバーごとの質問を見る</p>
+	<%= form_tag search_books_path, method: :get do %>
+	  <%= select_tag 'person_name', options_for_select([["花本静来", "花本静来"], ["和佐田遼", "和佐田遼"],  ["石井直斗", "石井直斗"], ["古谷圭介", "古谷圭介"]]), { :selected => @person_name,  :prompt => "選択してください" } %>
 	  <%= submit_tag "絞り込み" %>
 	<% end %>
 	</div>
   </div>
 </div>
+
+
+<% @bookd %>に寄せられた質問
+
+
+
 
 
 
@@ -32,11 +30,10 @@
 				<span class="comment-meta">
 				  <span class="comment-date"><%= book.created_at.strftime('%Y/%m/%d') %></span>
 				</span>
+				<div class="name">回答者:<%= book.person_name %></div>
 <!-- ------------------------聞きたいボタン---------------------------------- -->
 
-				<div class="map">
-					<span><%= render partial: 'books/books', locals: { book: book} %></span>
-				</div>
+				<%= render partial: 'books/books', locals: {book: book} %>
 
 <!-- -----------------------------聞きたいボタン----------------------------- -->
 				</div>
@@ -48,4 +45,11 @@
 </div>
 
 <%= paginate @books, class: "paginate" %>
+
+
+
+
+
+
+
 

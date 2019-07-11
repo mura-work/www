@@ -2,8 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-
-      @users = User.where(person_id: ["1","2","3","4","5"])
+      @users = User.where(id: ["1", "2", "3"] )
   end
 
   def show
@@ -26,7 +25,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-  	params.require(:user).permit(:name, :image, :main_image, :introduction, :career, :wants, :skill, :license, :hobby)
+  	params.require(:user).permit(:name, :image, :main_image, :format, :introduction, :career, :wants, :skill, :license, :hobby)
   end
 end
 

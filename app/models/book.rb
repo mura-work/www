@@ -1,13 +1,18 @@
 class Book < ApplicationRecord
-	belongs_to :user, foreign_key: "person_id"
+
+
+	belongs_to :user
 	has_many :book_comments, dependent: :destroy
 	has_many :favorites, dependent: :destroy
 	has_many :favorited_users, through: :favorites, source: :user
 
-	validates :person_id, presence:true
-	validates :body, presence:true
 
-	default_scope { order(created_at: :desc) }
+	validates :person_name, presence:true
+	validates :body, presence:true
+	validates :tag_list, presence:true
+
+	default_scope { order(favorites_count: :desc,created_at: :DESC) }
+
 
 
 	acts_as_taggable_on :labels

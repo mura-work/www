@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_05_153424) do
+ActiveRecord::Schema.define(version: 2019_07_11_020156) do
 
   create_table "book_comments", force: :cascade do |t|
     t.text "comment"
@@ -27,9 +27,8 @@ ActiveRecord::Schema.define(version: 2019_07_05_153424) do
     t.text "body"
     t.integer "user_id"
     t.integer "book_id"
-    t.integer "person_id"
-    t.integer "favorites_count"
-    t.index ["person_id"], name: "index_books_on_person_id"
+    t.integer "favorites_count", default: 0
+    t.string "person_name"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -92,15 +91,14 @@ ActiveRecord::Schema.define(version: 2019_07_05_153424) do
     t.boolean "admin", default: false
     t.text "introduction"
     t.string "image_id"
-    t.integer "person_id"
     t.text "career"
     t.text "wants"
     t.text "skill"
     t.text "license"
     t.text "hobby"
     t.string "main_image_id"
+    t.text "format"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["person_id"], name: "index_users_on_person_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

@@ -1,0 +1,141 @@
+<div class="content_box">
+	<p>各GSメンバーごとの質問を見る</p>
+	<%= form_tag search_books_path, method: :get do %>
+	  <%= select_tag 'person_id', options_for_select([["花本静来", 1], ["和佐田遼", 2],  ["石井直斗", 3], ["古谷圭介", 4]]), { :selected => @person_id,  :prompt => "選択してください" } %>
+	  <%= submit_tag "絞り込み" %>
+	<% end %>
+	</div>
+
+
+      
+<%= search_form_for @search, url: search_books_path ,html: { method: :post } do |f| %>
+	  <%= f.select( :person_name, { '花本静来': '花本静来' , '和佐田遼': '和佐田遼', '石井直斗': '石井直斗' , '古谷圭介': '古谷圭介' } , { selected: params[:q][:person_name] }, { onchange: 'this.form.submit()'} ) %>
+	<% end %>
+
+if params[:q].present?
+      @search = Book.ransack(params[:q])
+      @books = @search.result
+    else
+      params[:q] = { sorts: 'id desc' }
+      @search = Book.ransack()
+      @books = Book.order(favorites_count: :DESC).order(created_at: :DESC).page(params[:page])
+    end
+
+
+
+
+
+
+<%= form_tag(search_books_path, method: "get") do %>
+  <%= select_tag(:person_id, options_for_select([["花本静来", 1], ["和佐田遼", 2],  ["石井直斗", 3], ["古谷圭介", 4]]), { :selected => person_id, :prompt => "選択してください" }) %>
+  <%= submit_tag "絞り込み" %>
+
+def search
+    @books = Book.where("person_id = ?", params[:person_id]).page(params[:page])
+    render 'index'
+  end
+
+
+<%= search_form_for @search, url: search_books_path ,html: { method: :post } do |f| %>
+<%= f.select( :person_id, { ["花本静来", 1], ["和佐田遼", 2],  ["石井直斗", 3], ["古谷圭介", 4] } , { selected: params[:q][:person_id] }, { onchange: 'this.form.submit()'} ) %>
+<%= f.submit '完了' %>
+
+
+    <div class="select-wrap">
+    <div>各GSメンバーごとの質問を見る</div>
+	    <div class="form-group">
+	      <select id="person_id" class="person_id">
+	        <option name="location.pathname" value="location.pathname"></option>
+	        <option value="0">選択してください</option>
+	        <option value="1">花本静来</option>
+	        <option value="2">和佐田遼</option>
+	        <option value="3">石井直斗</option>
+	        <option value="4">古谷圭介</option>
+	      </select>
+	  	</div>
+	  	<button type="submit" class="btn btn-submit">絞り込み</button>
+    </div>
+
+
+
+
+$(function() {
+  // プルダウンメニューを選択することでイベントが発生
+  $('select[name=sort_order]').change(function() {
+
+    // 選択したoptionタグのvalue属性を取得する
+    var this_value = $(this).val();
+    // value属性の値により、ページ遷移先の分岐
+    if (this_value == "price_asc") {
+      html = "&sort=price+asc"
+    } else if (this_value == "price_desc") {
+      html = "&sort=price+desc"
+    } else if (this_value == "created_at_asc") {
+      html = "&sort=created_at+asc"
+    } else if (this_value == "created_at_desc") {
+      html = "&sort=created_at+desc"
+    } else {
+      html = ""
+    };
+    // 現在の表示ページ
+    var current_html = window.location.href;
+    // ページ遷移
+    window.location.href = current_html + html
+  });
+  // ページ遷移後の挙動
+  $(function () {
+    if (location['href'].match(/&sort=*.+/) != null) {
+      // option[selected: 'selected']を削除
+      if ($('select option[selected=selected]')) {
+        $('select option:first').prop('selected', false);
+      }
+
+      var selected_option = location['href'].match(/&sort=*.+/)[0].replace('&sort=', '');
+
+      if(selected_option == "price+asc") {
+        var sort = 1
+      } else if (selected_option == "price+desc") {
+        var sort = 2
+      } else if (selected_option == "created_at+asc") {
+        var sort = 3
+      } else if (selected_option == "created_at+desc") {
+        var sort = 4
+      }
+
+      var add_selected = $('select[name=sort_order]').children()[sort]
+      $(add_selected).attr('selected', true)
+    }
+  });
+});
+
+<div class="select-wrap">
+      <select class="sort_order" name="<%= :sort_order %>">
+        <option name="location.pathname" value="location.pathname"></option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="l-side">
+  <div class="search-sort">
+	<div class="select-wrap">
+      <select class="sort-order"  %>">
+        <option value="1">花本静来</option>
+        <option value="2">和佐田遼</option>
+        <option value="3">石井直斗</option>
+        <option value="4">古谷圭介</option>
+      </select>
+      <div><button tydive="button">絞り込み</button></div>
+      <p></p>
+    </div>
+  </div>
+</div>
+
+
+<%= select_tag 'memos[category_id]', options_from_collection_for_select(@categories, :id, :name), id:"form-category", class:"form-control" %>
+
+<%= select_tag 'memos[category_id]', options_from_collection_for_select(@categories, :id, :name, { :selected => @memo.category_id.to_i }), id:"form-category", class:"form-control" %>
+
+
+
+    

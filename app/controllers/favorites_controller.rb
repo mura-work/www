@@ -1,19 +1,25 @@
 class FavoritesController < ApplicationController
+	before_action :set_variables
 
-	def index
-		@favorites = Favorite.where(book_id: params[:id])
-	end
+	  def create
+	    favorite = current_user.favorites.new(book_id: @book.id)
+	    favorite.save
+	  end
 
-	def create
-		@book = Book.find(params[:book_id])
-		favorite = current_user.favorites.build(book_id: params[:book_id])
-		favorite.save
-	end
+	  def destroy
+	    favorite = current_user.favorites.find_by(book_id: @book.id)
+	    favorite.destroy
+	  end
 
-	def destroy
-		@book = Book.find(params[:book_id])
-		favorite = current_user.favorites.find_by(book_id: book.id)
-		favorite.destroy
-	end
+	  private
+
+	  def set_variables
+	    @book = Book.find(params[:book_id])
+	    @id_name = "#favorite-link-#{@book.id}"
+	  end
+
 
 end
+
+
+

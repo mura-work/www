@@ -1,5 +1,5 @@
 class AddFavoritesCountToBooks < ActiveRecord::Migration[5.2]
   def change
-    add_column :books, :favorites_count, :integer, foreign_key: true
+    add_column :books, :favorites_count, :integer, default: 0
   end
 end

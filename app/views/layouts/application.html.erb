@@ -11,6 +11,15 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <script>
+    $(function() {
+      $('select[name="person_id"]').change(function() {
+        var val = $('select[name="person_id"] option:selected').val();
+        alert(val);
+      });
+    });
+  </script>
+
   </head>
 
   <body>
@@ -30,10 +39,13 @@
               <div id="nav-content">
               <% if user_signed_in? %>
                 <li>
+                  <%= link_to '質問する' ,new_book_path %>
+                </li>
+                <li>
                   <%= link_to 'みんなの質問', books_path %>
                 </li>
                 <li>
-                  <%= link_to '質問する' ,new_book_path %>
+                  <%= link_to 'GS一覧' ,users_path %>
                 </li>
                 <li>
                   <% if current_user.admin? %>
