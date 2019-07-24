@@ -1,5 +1,4 @@
-<div class="row">
-	<div class="col-xs-offset-2 col-xs-8">
+
 	<%= form_for(@book_new) do |f| %>
 	  <% if @book_new.errors.any? %>
 	      <div id="error_explanation">
@@ -12,37 +11,28 @@
 	      </div>
 	  <% end %>
 
+<h2 class="title">質問をする</h2>
 
+<main class="main clearfix">
 
-
-		<h2>質問をする</h2>
-		<div class="col-xs-12">
-		<div class="field row">
+		<div class="field">
 			<%= f.label :質問内容 %><br>
-			<textarea class="col-xs-12 book_body" name="book[body]" id="book_body", class: "book_body", placeholder="ここに質問を記入してください"></textarea>
+			<textarea class="book_body" name="book[body]" id="book_body", class: "book_body", placeholder="ここに質問を記入してください"></textarea>
 		</div><br>
-		</div>
 
-		<div class="col-xs-3">
-		<div class="field row">
+		<div class="field">
 			<%= f.label :誰に答えて欲しいか %><br>
 			<%= f.select :person_name, [["花本静来", "花本静来"], ["和佐田遼", "和佐田遼"],  ["石井直斗", "石井直斗"], ["古谷圭介", "古谷圭介"]],  :prompt => "選択してください" %>
 		</div><br>
-		</div>
 
-		<div class="col-xs-offset-4 col-xs-5">
-		<div class="field row">
+		<div class="field">
 			<%= f.label :ジャンル（下から選んで記入してください！） %><br>
 			<%= f.select :tag_list, [["就活","就活"],["留学","留学"],["悩み","悩み"],["大学生活","大学生活"],["将来","将来"],["趣味","趣味"],["インターン","インターン"],["仕事","仕事"],["その他","その他"]], :prompt => "選択してください" %>
 		</div><br>
-		</div>
 
 
-		<div class="action row">
-			<input type="submit" name="commit" value="質問を送る" class="btn btn-warning col-xs-12" data-disable-with="質問する" style="color: black;">
+		<div class="action">
+			<input type="submit" name="commit" value="質問を送る" data-disable-with="質問する" style="color: black;">
 		</div>
 	<% end %>
-	</div>
-
-	<div class="col-xs-2"></div>
-</div>
+</main>

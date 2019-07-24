@@ -2,25 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container{
-    width: 1024px;
-    margin: 0 auto;
-}
 
-main-visual {
+.main-visual {
 	width: 100%;
-	height: 682px;
 	float: none;
-}
-
-main-visual-content {
-	width: 100%;
-	height: 234px;
-	text_align: center;
-}
-
-main-visual-text {
-	color: #fff;
 }
 
 .box1{
@@ -30,6 +15,7 @@ main-visual-text {
     border-top: solid 2px black;
     border-bottom: solid 2px black;
     float: left;
+    width: 30%;
 }
 .box1:before, .box1:after{
     content: '';
@@ -47,7 +33,7 @@ main-visual-text {
     padding: 10px;
 }
 
-.section blog {
+.blog {
     margin-bottom: 50px;
 }
 
@@ -57,13 +43,18 @@ body {
     padding-left: 10px;
 }
 
-
-
-
-
-.blog {
-    text-align: center;
+.top-message {
+    margin: 0 auto;
 }
+
+
+
+
+
+
+
+
+
 
 .blog-main {
     width: 100%;
@@ -79,9 +70,11 @@ body {
     padding-top: 50px;
     padding-bottom: 50px;
     width: 100%;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.blog-contents h3 {
+.contents-title {
     font-weight: bold;
 }
 
@@ -90,14 +83,29 @@ body {
     width: 100%;
 }
 
+
+
+
+.blog {
+    margin: 0  auto;
+}
+
+
 .blog-box-block {
-    width: 100%;
+
 }
 
 .blog-box {
-    width: 300px;
-    margin-top: 50px;
+    width: 30%;
+    height: 400px;
+    margin: 50px 0;
+    margin-right: 5%;
+    padding: 0 20px;
     float: left;
+}
+
+.blog-box:nth-child(3) {
+    margin-right: 0 ;
 }
 
 .blog-box img {
@@ -107,11 +115,9 @@ body {
 
 
 
-
 .main-contents {
     text-align: center;
-    padding-right: 10px;
-    padding-left: 10px;
+    margin: 0 auto;
 }
 
 .main-contents-img {
@@ -122,6 +128,8 @@ body {
 }
 
 .main-contents-box {
+    width: 600px;
+    height: 300px;
     padding-top: 20px;
     padding-bottom: 30px;
     text-align: left;
@@ -129,11 +137,12 @@ body {
 
 .main-contents-title {
     text-align: center;
-    font-size: 22px;
+    font-size: 26px;
     margin-bottom: 30px;
     display: block;
     font-weight: bold;
-    padding-top: 50px;
+    padding-top: 100px;
+    margin-top: 50px;
 }
 
 .circleNumber {
@@ -168,6 +177,48 @@ body {
     align-items: center;
     line-height: 1.4;
     margin-bottom: 8px;
+}
+
+
+
+
+
+@media screen and (max-width:768px) {
+
+.blog-box {
+    width: 300px;
+    margin-right: 5%;
+    float: left;
+    margin: 0 auto;
+}
+
+.main-contents {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main-contents-box {
+}
+
+.main-contents-img {
+    float: none;
+}
+
+.main-contents-info {
+
+}
+
+.info-title {
+    margin: 0 auto;
+}
+
+}
+
+
+@media screen and (max-width:425px) {
+.social i {
+    color: blue;
+    }
 }
 
 

@@ -8,24 +8,41 @@ h2 {
 
 .head-image {
 	width: 100%;
+	background-size: cover;
 }
 
 .users h4 {
 	font-weight: bold;
 }
 
-.users-index {
-	width: 70%;
-	text-align: center;
-	deisplay: inline-block;
+.main {
+	width: 80%;
 }
+
+.users-index {
+	margin: 20px;
+	deisplay: inline-block;
+	font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    float: left;
+}
+
 
 .img-circle  {
 	margin-right: 10px;
 }
 
 .users-index-boxes {
-	float: right;
+	margin: 0 auto;
+	padding: 10px 0;
+}
+
+.users-index-name {
+	font-size: 22px;
+	margin: 0 auto;
 }
 
 .users p {

@@ -17,6 +17,19 @@
     text-align: right;
 }
 
+.content_box_user {
+    border-bottom: solid 1px;
+}
+
+.title {
+    padding: 30px;
+}
+
+.main {
+    width: 80%;
+    margin: 0 auto;
+}
+
 .content_box {
 	 margin: 0 auto;
 }
@@ -46,7 +59,26 @@
     font-weight: bold;
  }
 
+.box-category {
+    float: left;
+}
 
+.box-text {
+    word-wrap: break-word;
+    background-color: lightgreen;
+}
+
+.category {
+    float: left;
+}
+
+.name {
+    float: left;
+}
+
+.favorite_button {
+    float: right;
+}
 
 
 
