@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.5'
+ruby '2.3.8'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
@@ -82,5 +82,8 @@ gem 'counter_culture', '~> 1.8'
 
 gem "ransack"
 
+gem 'json'
+gem 'mysql2'
 
+gem 'listen', '>= 3.0.5', '< 3.2'
 

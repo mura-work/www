@@ -18,22 +18,3 @@
 //= require_tree .
 
 
-$(function() {
-	$('[id=person_id]').change(funcion() {
-		var val = $('id=person_id').val();
-		console.log(val);
-
-		var txt = $('[id=person_id] option:selected').text();
-		console.log(txt);
-	});
-});
-
-
-$(function() {
-	$('select[id=person_id').change(function() {
-		val this_value = $('this').val();
-
-		if (this_value == "person_id")
-	})
-})
-
