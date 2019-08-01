@@ -11,15 +11,6 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <script>
-    $(function() {
-      $('select[name="person_id"]').change(function() {
-        var val = $('select[name="person_id"] option:selected').val();
-        alert(val);
-      });
-    });
-  </script>
-
   </head>
 
   <body>
