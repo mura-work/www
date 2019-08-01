@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.home {
+    width: 100%;
+}
+
 .main-visual {
 	width: 100%;
 	float: none;
@@ -16,6 +20,7 @@
     border-bottom: solid 2px black;
     float: left;
     width: 30%;
+    margin: 0 auto;
 }
 .box1:before, .box1:after{
     content: '';
@@ -115,6 +120,9 @@ body {
 
 
 
+
+
+
 .main-contents {
     text-align: center;
     margin: 0 auto;
@@ -157,6 +165,7 @@ body {
 
 .main-contents-info p {
     font-size: 16px;
+    margin-bottom: 30px;
 }
 
 .main-contents-box span {
@@ -184,6 +193,22 @@ body {
 
 
 @media screen and (max-width:768px) {
+.box1{
+    margin-top: 50px;
+    position: relative;
+    padding: 10px 1.5em;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+    float: left;
+    width: 100%;
+}
+
+
+.blog {
+    margin-bottom: 50px;
+}
+
+
 
 .blog-box {
     width: 300px;
@@ -198,10 +223,12 @@ body {
 }
 
 .main-contents-box {
+    width: 100%;
 }
 
 .main-contents-img {
     float: none;
+    margin-top: 30px;
 }
 
 .main-contents-info {
@@ -219,6 +246,19 @@ body {
 .social i {
     color: blue;
     }
+.main-contents-box {
+    width: 100%;
+}
+
+.main-contents-img {
+    margin-top: 30px;
+}
+
+.main-contents-info p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
 }
 
 

@@ -12,7 +12,7 @@
 			<button type="button" class="btn btn-danger"><%= link_to 'Destroy', book_path(@book), method: :delete, "data-confirm" => "本当に削除しますか？"  %></button>
         <% end %>
         <div class="map">
-        	tags: <%= raw(@book.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %>
+        	ジャンル: <%= raw(@book.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %>
         </div>
         <!--  -->
 	</div>
