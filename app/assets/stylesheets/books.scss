@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.main_contents {
+    width: 50%;
+    margin: 0 auto;
+}
+
 .box2 {
     padding: 0.5em 1em;
     margin: 2em 0;
@@ -35,7 +40,12 @@
 }
 
 .map {
-    float: right;
+    float: left;
+}
+
+.comment-date {
+    float: none;
+    font-size: 12px;
 }
 
 .content_box {
@@ -66,6 +76,10 @@
 .box-text {
     word-wrap: break-word;
     background-color: lightgreen;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 0 -5px;
+    margin-bottom: 10px;
 }
 
 .category {
@@ -81,5 +95,70 @@
 }
 
 
+
+
+
+.img-circle {
+    width: 70px;
+    height: 70px;
+    float: right;
+}
+
+.comment {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  border-radius: 15px;
+}
+
+.comment:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #e0edff;
+}
+
+.comment-entry {
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.comment-info {
+    float: right;
+    padding-top: 10px;
+}
+
+.comment-user {
+    text-align: center;
+    font-size: 20px;
+}
+
+.date {
+    text-align: center;
+    font-size: 12px;
+}
+
+
+
+
+@media screen and (max-width:425px) {
+.main_contents {
+    width: 100%;
+}
+
+}
 
 

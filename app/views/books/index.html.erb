@@ -4,7 +4,7 @@
 	<div class="content_box">
 	<p class="content_box_user">各GSメンバーごとの質問を見る</p>
 	<%= form_tag search_books_path, method: :get do %>
-	  <%= select_tag 'person_name', options_for_select([["花本静来", "花本静来"], ["和佐田遼", "和佐田遼"],  ["石井直斗", "石井直斗"], ["古谷圭介", "古谷圭介"]]), { :selected => @person_name,  :prompt => "選択してください" } %>
+	  <%= select_tag 'person_name', options_for_select([["古谷圭介", "古谷圭介"], ["和佐田遼", "和佐田遼"], ["新井源己", "新井源己"], ["石井直斗", "石井直斗"],["須澤亮太", "須澤亮太"],["小林直人", "小林直人"],["粂健", "粂健"],["高木祥嗣", "高木祥嗣"],["関谷詩織", "関谷詩織"],["深谷幹", "深谷幹"],["三枝博紀", "三枝博紀"],["花本静来", "花本静来"],["村田尚也", "村田尚也"] ]), { :selected => @person_name,  :prompt => "選択してください" } %>
 	  <%= submit_tag "絞り込み" %>
 	<% end %>
 	</div>

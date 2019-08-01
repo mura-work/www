@@ -19,7 +19,7 @@
     border-top: solid 2px black;
     border-bottom: solid 2px black;
     float: left;
-    width: 30%;
+    width: 33%;
     margin: 0 auto;
 }
 .box1:before, .box1:after{
@@ -92,7 +92,7 @@ body {
 
 
 .blog {
-    margin: 0  auto;
+    margin: 0 auto;
 }
 
 
@@ -257,6 +257,19 @@ body {
 .main-contents-info p {
     font-size: 16px;
     margin-bottom: 30px;
+}
+
+.blog-box h4, .blog-box p {
+    text-align: center;
+}
+
+.blog-box p {
+    margin-bottom: 20px;
+}
+
+.blog-box-img {
+    margin-left: 30px;
+    padding-top: 20px;
 }
 
 }

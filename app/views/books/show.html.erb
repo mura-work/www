@@ -4,6 +4,9 @@
 		<div class="box-text">
 			<%= @book.body %>
 		</div>
+		<div class="mazp">
+        	ジャンル: <%= raw(@book.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %>
+        </div><br>
 		<div class="comment-meta">
 			<div class="comment-date"><%= @book.created_at.strftime('%Y/%m/%d') %>
 			</div>
@@ -11,23 +14,27 @@
 		<% if current_user.admin? %>
 			<button type="button" class="btn btn-danger"><%= link_to 'Destroy', book_path(@book), method: :delete, "data-confirm" => "本当に削除しますか？"  %></button>
         <% end %>
-        <div class="map">
-        	ジャンル: <%= raw(@book.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %>
-        </div>
-        <!--  -->
 	</div>
 
+
+
+<h2>↓回答はこちら↓</h2>
 
 <!-- コメントを表示する ----------------------------------------------------------------------------- -->
 <% @book.book_comments.each do |book_comment| %>
 
-	<%= attachment_image_tag @book.user, :image, :fill, 50, 50 ,class: "img-circle" %><br>
-			<%= book_comment.user.name %><br>
-		<div class="comment-meta">
-			  <div class="comment-date"><%= book_comment.created_at.strftime('%Y/%m/%d') %>
-			  </div>
-		<pre><div class="comment-entry"><%= book_comment.comment %></div></pre>
+	<div class="comment">
+		<div class="comment-entry"><%= book_comment.comment %></div>
+		<div class="comment-info">
+			<%= attachment_image_tag book_comment.user, :image, :fill, 70, 70 ,:class => 'img-circle', fallback: "no_image.jpg" %>
+			<div class="comment-user">
+				<%= book_comment.user.name %><br>
+			</div>
+			<div class="date">
+				<%= book_comment.created_at.strftime('%Y/%m/%d') %>
+			</div>
 		</div>
+	</div>
 <% end %>
 <!-- コメントを表示する ------------------------------------------------------------------------------ -->
 
