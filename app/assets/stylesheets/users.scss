@@ -2,13 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h2 {
-	margin-top: 50px;
+.user-main {
+	width: 50%;
+	margin: 0 auto;
+}
+
+
+.user-name {
+	font-size: 35px;
+	text-align: center;
 }
 
 .head-image {
 	width: 100%;
 	background-size: cover;
+}
+
+.user-zyanru {
+	margin-top: 30px;
+	text-align: center;
+}
+
+.img-circles {
+	float: left;
+	text-align: center;
+}
+
+.users {
+	margin-top: 50px;
 }
 
 .users h4 {
@@ -20,7 +41,7 @@ h2 {
 }
 
 .users-index {
-	margin: 20px;
+	margin-right: 20px;
 	deisplay: inline-block;
 	font-weight: bold;
     color: #6091d3;/*文字色*/
@@ -32,7 +53,7 @@ h2 {
 
 
 .img-circle  {
-	margin-right: 10px;
+	margin: 10px 10px 0 10px;
 }
 
 .users-index-boxes {
@@ -43,6 +64,7 @@ h2 {
 .users-index-name {
 	font-size: 22px;
 	margin: 0 auto;
+	text-align: center;
 }
 
 .users p {
@@ -58,5 +80,85 @@ h2 {
     border-radius: 9px;
 }
 
+.users-index-box {
+	text-align: center;
+}
 
+
+
+
+@media screen and (max-width:425px) {
+.main {
+	width: 100%;
+}
+
+.users-index {
+	margin-right: 10px;
+	margin-bottom: 20px;
+	margin-left: 30px;
+	deisplay: inline-block;
+	font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    float: left;
+}
+
+.img-circle  {
+	margin: 0 auto;
+	width: 100px;
+	height: 100px;
+}
+
+}
+
+@media screen and (max-width:425px) {
+.main, .user-main {
+	width: 100%;
+}
+
+.users {
+	margin-top: -40px;
+}
+
+.img-circles  {
+	margin: 0 auto;
+	width: 120px;
+	height: 120px;
+	float: left;
+
+.user-name {
+	font-size: 40px;
+	float: right;
+	margin-top: 20px;
+}
+
+.users-index {
+	margin: 10px ;
+	deisplay: inline-block;
+	font-weight: bold;
+    color: #6091d3;/*文字色*/
+    background: #FFF;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    float: left;
+}
+
+.img-circle  {
+	margin: 0 auto;
+	width: 120px;
+	height: 120px;
+}
+
+.user-zyanru {
+	margin: -20px;
+	text-align: center;
+}
+
+
+
+}
+
+}
 
