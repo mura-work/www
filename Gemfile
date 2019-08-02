@@ -80,6 +80,8 @@ gem 'kaminari','~> 1.1.1'
 
 gem 'counter_culture', '~> 1.8'
 
+gem 'mysql2'
+
 gem "ransack"
 
 gem 'json'
