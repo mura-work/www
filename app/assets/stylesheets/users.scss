@@ -4,29 +4,47 @@
 
 .user-main {
 	width: 50%;
-	margin: 0 auto;
-}
-
-
-.user-name {
-	font-size: 35px;
-	text-align: center;
+	margin-top: 30px;
+	margin: 0 auto; 
 }
 
 .head-image {
-	width: 100%;
-	background-size: cover;
+        width: 100%;
+        background-size: cover;
 }
+
+.img-circles {
+        float: left;
+        border-radius: 50%;
+}
+
+.user-profile {
+    background: #FFF;
+    border: solid 3px #FFF;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    margin: 30px 0;
+    float: left;
+    width: 100%;
+}
+
+.right-contents {
+	width: 50%;
+	float: right;
+}
+
+.user-name {
+	font-size: 35px;
+	font-weight: bold;
+	text-align: center;
+}
+
 
 .user-zyanru {
 	margin-top: 30px;
 	text-align: center;
 }
 
-.img-circles {
-	float: left;
-	text-align: center;
-}
+
 
 .users {
 	margin-top: 50px;
@@ -37,11 +55,12 @@
 }
 
 .main {
-	width: 80%;
+	width: 50%;
+	margin: 0 auto;
 }
 
 .users-index {
-	margin-right: 20px;
+	margin: 20px 100px;
 	deisplay: inline-block;
 	font-weight: bold;
     color: #6091d3;/*文字色*/
@@ -53,18 +72,19 @@
 
 
 .img-circle  {
+	float: right;
 	margin: 10px 10px 0 10px;
 }
 
-.users-index-boxes {
-	margin: 0 auto;
-	padding: 10px 0;
+.left-contents {
+	width: 80%;
+
 }
 
 .users-index-name {
-	font-size: 22px;
 	margin: 0 auto;
 	text-align: center;
+	margin-top: 15px;
 }
 
 .users p {
@@ -82,6 +102,7 @@
 
 .users-index-box {
 	text-align: center;
+	width: 80%;
 }
 
 
@@ -93,20 +114,22 @@
 }
 
 .users-index {
-	margin-right: 10px;
-	margin-bottom: 20px;
-	margin-left: 30px;
+	margin: 15px auto;
 	deisplay: inline-block;
 	font-weight: bold;
-    color: #6091d3;/*文字色*/
-    background: #FFF;
-    border: solid 3px #6091d3;/*線*/
-    border-radius: 10px;/*角の丸み*/
-    float: left;
+	 color: #6091d3;/*文字色*/
+	 background: #FFF;
+	 border: solid 3px #6091d3;/*線*/
+	border-radius: 10px;/*角の丸み*/
 }
 
+.users-index-name {
+	font-size: 14px;
+}
+
+
 .img-circle  {
-	margin: 0 auto;
+	margin: 15px 0;
 	width: 100px;
 	height: 100px;
 }
@@ -124,36 +147,20 @@
 
 .img-circles  {
 	margin: 0 auto;
-	width: 120px;
-	height: 120px;
+	width: 135px;
+	height: 135px;
 	float: left;
 
 .user-name {
-	font-size: 40px;
+	font-size: 24px;
 	float: right;
 	margin-top: 20px;
 }
 
-.users-index {
-	margin: 10px ;
-	deisplay: inline-block;
-	font-weight: bold;
-    color: #6091d3;/*文字色*/
-    background: #FFF;
-    border: solid 3px #6091d3;/*線*/
-    border-radius: 10px;/*角の丸み*/
-    float: left;
-}
-
-.img-circle  {
-	margin: 0 auto;
-	width: 120px;
-	height: 120px;
-}
-
 .user-zyanru {
-	margin: -20px;
+	margin: 10px;
 	text-align: center;
+	font-size: 12px;
 }
 
 

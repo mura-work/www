@@ -98,10 +98,11 @@
 
 
 
-.img-circle {
+.img-circlee {
     width: 70px;
     height: 70px;
     float: right;
+    border-radius: 50%;
 }
 
 .comment {
@@ -143,7 +144,6 @@
 
 .comment-user {
     text-align: center;
-    font-size: 20px;
 }
 
 .date {
@@ -157,6 +157,11 @@
 @media screen and (max-width:425px) {
 .main_contents {
     width: 100%;
+}
+
+.img-circlee {
+    width: 50px;
+    height: 50px;
 }
 
 }

@@ -6,14 +6,11 @@
 	<div class="user">
 <!-- ------- アイコンと名前--------------------- -->
 		<div class="user-profile">
-			<div class="user-image"><%= attachment_image_tag @user, :image, :fill, 200, 200, :class => 'img-circles', fallback: "no_image.jpg" %>
-			</div>
-			<div class="user-name">
-				<%= @user.name %>
-			</div>
-			<div class="user-zyanru">
-				得意ジャンル：<%= @user.format %>
-			</div>
+			<%= attachment_image_tag @user, :image, :fill, 200, 200, :class => 'img-circles', fallback: "no_image.jpg" %>
+		   <div class="right-contents">
+			<div class="user-name"><%= @user.name %></div>
+			<div class="user-zyanru">得意ジャンル：<%= @user.format %></div>
+		   </div>
 		</div>
 	</div>
 

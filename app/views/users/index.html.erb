@@ -5,8 +5,8 @@
 		<%= link_to user_path(user) do %>
 	    <div class="users-index">
 		      <%= attachment_image_tag user, :image,  :fill, 120, 120, :class => 'img-circle', fallback: "no_image.jpg" %>
-	      <div class="users-index-boxes">
-	        <div class="users-index-name"><%= user.name %></div>
+	      <div class="left-contents">
+	        <div class="users-index-name"><%= user.name %></div><br>
 	        <div class="users-index-box"><%= user.format %></div>
 	      </div>
 	    </div>
