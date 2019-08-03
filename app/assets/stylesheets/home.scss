@@ -113,8 +113,8 @@ body {
     margin-right: 0 ;
 }
 
-.blog-box img {
-    margin-bottom: 30px;
+.blog-box-img {
+    border: solid 1px #000;/*線*/
 }
 
 
@@ -138,9 +138,10 @@ body {
 .main-contents-box {
     width: 600px;
     height: 300px;
-    padding-top: 20px;
+    padding-top: 45px;
     padding-bottom: 30px;
     text-align: left;
+    border: solid 3px lime;/*線*/
 }
 
 .main-contents-title {
@@ -186,6 +187,7 @@ body {
     align-items: center;
     line-height: 1.4;
     margin-bottom: 8px;
+    margin-top: 10px;
 }
 
 
@@ -224,6 +226,8 @@ body {
 
 .main-contents-box {
     width: 100%;
+    height: 400px;
+    padding-top: 10px;
 }
 
 .main-contents-img {
@@ -231,7 +235,7 @@ body {
     margin-top: 30px;
 }
 
-.main-contents-info {
+.blog-box-img {
 
 }
 
@@ -268,8 +272,6 @@ body {
 }
 
 .blog-box-img {
-    margin-left: 30px;
-    padding-top: 20px;
 }
 
 }
