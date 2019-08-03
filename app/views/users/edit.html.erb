@@ -10,22 +10,23 @@
 	<h4>アイコン</h4>
 	<%= f.attachment_field :image %>
 	<h4>得意ジャンル</h4>
-	<%= f.text_field :format %>
+	<%= f.text_area :format, rows:'5', class: "form-control", placeholder: "たくさん書いてね！！！" %>
 	<h4>今やっていること</h4>
-	<%= f.text_area :introduction , :class => "col-xs-12" %><br>
+	<%= f.text_area :introduction, rows:'5', class: "form-control", placeholder: "たくさん書いてね！！！" %><br>
 	<h4>経歴</h4>
-	<%= f.text_area :career , :class => "col-xs-12" %><br>
+	<%= f.text_area :career, rows:'5', class: "form-control", placeholder: "たくさん書いてね！！！" %><br>
 	<h4>これからやろうとしていること</h4>
-	<%= f.text_area :wants , :class => "col-xs-12" %><br>
+	<%= f.text_area :wants, rows:'5', class: "form-control", placeholder: "たくさん書いてね！！！" %><br>
 	<h4>強み・特徴・スキル</h4>
-	<%= f.text_area :skill , :class => "col-xs-12" %><br>
+	<%= f.text_area :skill, rows:'5', class: "form-control", placeholder: "" %><br>
 	<h4>資格</h4>
-	<%= f.text_area :license , :class => "col-xs-12" %><br>
+	<%= f.text_area :license, rows:'5', class: "form-control", placeholder: "" %><br>
 	<h4>趣味</h4>
-	<%= f.text_area :hobby , :class => "col-xs-12" %><br>
+	<%= f.text_area :hobby , :class => "col-xs-12" %>
 
 	<%= f.submit 'ユーザー情報を更新する', class: 'btn btn-primary' %>
 
 <% end %>
 
 </div>
+
