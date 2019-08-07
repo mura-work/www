@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-      @users = User.where(id: ["2","3","4","5","6","7","8","1","10","11","12","13","14"] )
+      @users = User.where(id: ["2","3","4","5","6","7","8","1","10","11","12","13","23"] )
   end
 
   def show

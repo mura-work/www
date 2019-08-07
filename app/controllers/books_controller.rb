@@ -38,7 +38,7 @@ class BooksController < ApplicationController
     @book_new.user_id = current_user.id
   	if  @book_new.save
         flash[:notice] = "質問を作成しました"
-  	    redirect_to books_path
+  	redirect_to books_path
     else
         @book_new = Book.new(book_params)
         render "new"

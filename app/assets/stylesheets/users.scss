@@ -33,7 +33,7 @@
 }
 
 .user-name {
-	font-size: 35px;
+	font-size: 33px;
 	font-weight: bold;
 	text-align: center;
 }
@@ -55,7 +55,7 @@
 }
 
 .main {
-	width: 50%;
+	width: 90%;
 	margin: 0 auto;
 }
 
@@ -68,6 +68,7 @@
     border: solid 3px #6091d3;/*線*/
     border-radius: 10px;/*角の丸み*/
     float: left;
+    width: 40%;
 }
 
 
@@ -106,17 +107,6 @@
 }
 
 @media screen and (max-width:1025px) {
-<<<<<<< HEAD
-=======
-
-.main {
-	width: 70%;
-}
-
-
-
-}
->>>>>>> 55abc71411cefe1dddade7aded736cc04bf15c97
 
 .main {
 	width: 90%;
@@ -126,6 +116,18 @@
 
 }
 
+
+@media screen and (max-width:768px) {
+
+.user-main {
+        width: 100%;
+}
+
+.users-index {
+	width: 100%;
+}
+
+}
 
 @media screen and (max-width:425px) {
 .main {
@@ -148,7 +150,7 @@
 
 
 .img-circle  {
-	margin: 15px 0;
+	margin: 20px 0;
 	width: 100px;
 	height: 100px;
 }
@@ -158,6 +160,7 @@
 @media screen and (max-width:550px) {
 .main, .user-main {
 	width: 100%;
+	margin-top: 25px;
 }
 
 .users {
@@ -166,8 +169,8 @@
 
 .img-circles  {
 	margin: 0 auto;
-	width: 135px;
-	height: 135px;
+	width: 130px;
+	height: 130px;
 	float: left;
 
 .user-name {
@@ -187,4 +190,3 @@
 }
 
 }
-
