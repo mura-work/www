@@ -18,6 +18,7 @@
 
 
 
+
 <h2>↓回答はこちら↓</h2>
 
 <!-- コメントを表示する ----------------------------------------------------------------------------- -->
@@ -36,6 +37,9 @@
 				<%= book_comment.created_at.strftime('%Y/%m/%d') %>
 			</div>
 		</div>
+		<% if current_user.admin? %>
+			<button type="button" class="btn btn-danger"><%= link_to 'Destroy', book_book_comments_path(book_id: @book, id: book_comment.id), method: :delete, "data-confirm" => "本当に削除しますか？"  %></button>
+        <% end %>
 	</div>
 <% end %>
 <!-- コメントを表示する ------------------------------------------------------------------------------ -->
