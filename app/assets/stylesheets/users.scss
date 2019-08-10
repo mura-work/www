@@ -54,7 +54,7 @@
 	font-weight: bold;
 }
 
-.main {
+.main-index {
 	width: 90%;
 	margin: 0 auto;
 }
@@ -108,7 +108,7 @@
 
 @media screen and (max-width:1025px) {
 
-.main {
+.main-index {
 	width: 90%;
 }
 
@@ -125,17 +125,18 @@
 
 .users-index {
 	width: 100%;
+	margin: 20px auto;
 }
 
 }
 
 @media screen and (max-width:425px) {
-.main {
+.main-index {
 	width: 100%;
 }
 
 .users-index {
-	margin: 15px;
+	margin: 15px auto;
 	deisplay: inline-block;
 	font-weight: bold;
 	 color: #6091d3;/*文字色*/
@@ -158,7 +159,7 @@
 }
 
 @media screen and (max-width:550px) {
-.main, .user-main {
+.main-index, .user-main {
 	width: 100%;
 	margin-top: 25px;
 }
