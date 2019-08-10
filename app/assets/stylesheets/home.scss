@@ -192,8 +192,6 @@ body {
 
 
 
-
-
 @media screen and (max-width:768px) {
 .box1{
     margin-top: 50px;
@@ -202,7 +200,16 @@ body {
     border-top: solid 2px black;
     border-bottom: solid 2px black;
     float: left;
+    width: 33%;
+}
+
+.top-box {
     width: 100%;
+}
+
+.image-img {
+    width: 90%;
+    text-align: center;
 }
 
 
@@ -271,7 +278,19 @@ body {
     margin-bottom: 20px;
 }
 
-.blog-box-img {
+.top-box {
+    width: 100%;
+}
+
+.image-img {
+    height: 100px;
+    width: 90%;
+    text-align: center;
+}
+
+
+.blog {
+    margin-bottom: 50px;
 }
 
 }
