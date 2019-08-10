@@ -1,6 +1,5 @@
 <h2>みんなの質問</h2>
 
-
 	<div class="content_box">
 	<p class="content_box_user">各GSメンバーごとの質問を見る</p>
 	<%= form_tag search_books_path, method: :get do %>
@@ -8,7 +7,6 @@
 	  <%= submit_tag "絞り込み" %>
 	<% end %>
 	</div>
-
 
 <div class="main_contents">
 	<% @books.each do |book| %>
