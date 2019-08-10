@@ -2,7 +2,7 @@
 <main class="main_contents">
 	<div class="box2">
 		<div class="box-text">
-		    <pre style="background: lightgreen; border-style:none; "><%= @book.body %></pre>
+		    <pre style="border-style:none; "><%= @book.body %></pre>
 		</div>
 		<div class="mazp">
         	ジャンル: <%= raw(@book.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %>
