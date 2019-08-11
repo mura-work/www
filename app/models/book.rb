@@ -10,8 +10,6 @@ class Book < ApplicationRecord
 	validates :body, presence:true
 	validates :tag_list, presence:true
 
-	default_scope { order(favorites_count: :desc,created_at: :DESC) }
-
 	acts_as_taggable_on :labels
 	acts_as_taggable
 

@@ -2,14 +2,24 @@ class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @books = Book.order(favorites_count: :DESC).order(created_at: :DESC).page(params[:page])
+    @books = Book.order(favorites_count: "DESC").page(params[:page])
     @book = Book.find_by(params[:book_id])
-    @user = @book.user
     @favorites = Favorite.where(user_id: session[:user_id], book_id: @book.id)
     if params[:tag]
       @books = Book.tagged_with(params[:tag]).page(params[:page])
     else
-      @books = Book.page(params[:page])
+      @books = Book.order(favorites_count: "DESC").page(params[:page])
+    end
+  end
+
+  def top
+    @books = Book.order(created_at: "DESC").page(params[:page])
+    @book = Book.find_by(params[:book_id])
+    @favorites = Favorite.where(user_id: session[:user_id], book_id: @book.id)
+    if params[:tag]
+      @books = Book.tagged_with(params[:tag]).page(params[:page])
+    else
+      @books = Book.order(created_at: "DESC").page(params[:page])
     end
   end
 
@@ -38,7 +48,7 @@ class BooksController < ApplicationController
     @book_new.user_id = current_user.id
   	if  @book_new.save
         flash[:notice] = "質問を作成しました"
-  	redirect_to books_path
+  	    redirect_to books_path
     else
         @book_new = Book.new(book_params)
         render "new"

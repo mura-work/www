@@ -1,0 +1,36 @@
+<h2 style="margin-top: 40px;">新着の質問</h2>
+
+	<div class="content_box">
+	<p class="content_box_user">各GSメンバーごとの質問を見る</p>
+	<%= form_tag search_books_path, method: :get do %>
+	  <%= select_tag 'person_name', options_for_select([["古谷圭介", "古谷圭介"], ["和佐田遼", "和佐田遼"], ["新井源己", "新井源己"], ["石井直斗", "石井直斗"],["須澤亮太", "須澤亮太"],["小林直人", "小林直人"],["粂健", "粂健"],["高木祥嗣", "高木祥嗣"],["関谷詩織", "関谷詩織"],["深谷幹", "深谷幹"],["三枝博紀", "三枝博紀"],["花本静来", "花本静来"],["村田尚也", "村田尚也"],["GS", "GS"] ]), { :selected => @person_name,  :prompt => "選択してください" } %>
+	  <%= submit_tag "絞り込み" %>
+	<% end %>
+	</div>
+
+<div class="main_contents">
+	<% @books.each do |book| %>
+	<div class="box2 clearfix">
+		<div class="box-text">
+		<div style="border-style: none; white-space: pre-wrap; font-size: 14px; "><%= link_to book.body, book_path(book.id) %></div>
+		</div>
+		<div class="box-category">
+			<div class="category">ジャンル: <%= raw(book.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></div>
+			<br>
+			<div>回答者：<%= book.person_name %></div>
+			<div class="comment-meta">
+			  <div class="comment-date"><%= book.created_at.strftime('%Y/%m/%d') %></div>
+		</div>
+		</div>
+<!-- ------------------------聞きたいボタン---------------------------------- -->
+		<div class="favorite_button">
+			<%= render partial: 'books/books', locals: {book: book} %>
+		</div>
+
+<!-- -----------------------------聞きたいボタン----------------------------- -->
+	</div>
+	<% end %>
+</div>
+
+<%= paginate @books, class: "paginate" %>
+
