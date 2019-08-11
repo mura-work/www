@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get 'books/top'
+  get 'top' => 'books#top'
   get 'home/top'
   get 'home/about'
   root 'home#top'
