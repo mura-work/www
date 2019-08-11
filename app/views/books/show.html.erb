@@ -2,7 +2,7 @@
 <main class="main_contents">
 	<div class="box2">
 		<div class="box-text">
-		    <pre style="border-style:none; "><%= @book.body %></pre>
+		    <div style="border-style:none; white-space: pre-wrap;"><%= @book.body %></div>
 		</div>
 		<div class="mazp">
         	ジャンル: <%= raw(@book.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %>
@@ -27,7 +27,7 @@
 
 	<div class="comment">
 		<div class="comment-entry">
-		 <pre style="background: white; border-style:none; "><%= book_comment.comment %></pre>
+		 <div style="background: white; border-style:none; white-space: pre-wrap; "><%= book_comment.comment %></div>
 		</div>
 		<div class="comment-info">
 			<%= attachment_image_tag book_comment.user, :image, :fill, 50, 50,:class => 'img-circlee', fallback: "no_image.jpg" %>
