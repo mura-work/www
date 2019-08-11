@@ -12,8 +12,8 @@
 	<% @books.each do |book| %>
 	<div class="box2 clearfix">
 		<div class="box-text">
-		<pre style="border-style:none; "><%= link_to book.body, book_path(book.id) %></div>
-		</pre>
+		<div style="border-style: none; white-space: pre-wrap; "><%= link_to book.body, book_path(book.id) %></div>
+		</div>
 		<div class="box-category">
 			<div class="category">ジャンル: <%= raw(book.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></div>
 			<br>
