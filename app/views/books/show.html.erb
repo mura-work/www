@@ -1,6 +1,6 @@
 <h2 style="margin-top: 40px;">質問内容</h2>
 <main class="main_contents">
-	<div class="box2">
+	<div class="box2 animated slideInUp">
 		<div class="box-text">
 		    <div style="border-style:none; white-space: pre-wrap; font-size: 14px;"><%= @book.body %></div>
 		</div>
@@ -25,7 +25,7 @@
 <!-- コメントを表示する ----------------------------------------------------------------------------- -->
 <% @book.book_comments.each do |book_comment| %>
 
-	<div class="comment">
+	<div class="comment animated slideInUp">
 		<div class="comment-entry">
 		 <div style="background: white; border-style:none; white-space: pre-wrap; font-size: 14px; "><%= book_comment.comment %></div>
 		</div>
