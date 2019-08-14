@@ -10,7 +10,7 @@
 
 <div class="main_contents">
 	<% @books.each do |book| %>
-	<div class="box2 clearfix">
+	<div class="box2 clearfix animated slideInUp">
 		<div class="box-text">
 		<div style="border-style: none; white-space: pre-wrap; font-size: 14px; "><%= link_to book.body, book_path(book.id) %></div>
 		</div>
