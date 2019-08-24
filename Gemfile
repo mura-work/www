@@ -89,3 +89,11 @@ gem 'json'
 gem 'listen', '>= 3.0.5', '< 3.2'
 
 gem 'listen', '>= 3.0.5', '< 3.2'
+
+gem 'slack-notifier'
+
+gem "slack-ruby-client"
+
+gem "slack-incoming-webhooks"
+
+gem 'slack'

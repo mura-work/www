@@ -5,10 +5,13 @@ class BooksController < ApplicationController
     @books = Book.order(favorites_count: "DESC").page(params[:page])
     @book = Book.find_by(params[:book_id])
     @favorites = Favorite.where(user_id: session[:user_id], book_id: @book.id)
+    @comment = BookComment.where(params[:book_id])
     if params[:tag]
       @books = Book.tagged_with(params[:tag]).page(params[:page])
+      @comment = BookComment.where(params[:book_id])
     else
       @books = Book.order(favorites_count: "DESC").page(params[:page])
+      @comment = BookComment.where(params[:book_id])
     end
   end
 
@@ -16,10 +19,13 @@ class BooksController < ApplicationController
     @books = Book.order(created_at: "DESC").page(params[:page])
     @book = Book.find_by(params[:book_id])
     @favorites = Favorite.where(user_id: session[:user_id], book_id: @book.id)
+    @comment = BookComment.where(params[:book_id])
     if params[:tag]
       @books = Book.tagged_with(params[:tag]).page(params[:page])
+      @comment = BookComment.where(params[:book_id])
     else
       @books = Book.order(created_at: "DESC").page(params[:page])
+      @comment = BookComment.where(params[:book_id])
     end
   end
 
@@ -45,10 +51,12 @@ class BooksController < ApplicationController
 
   def create
   	@book_new = Book.new(book_params)
-    @book_new.user_id = current_user.id
-  	if  @book_new.save
+	@book_new.user_id = current_user.id
+     if  @book_new.save
         flash[:notice] = "質問を作成しました"
-  	    redirect_to books_path
+  	redirect_to books_path
+	notifier = Slack::Notifier.new("https://hooks.slack.com/services/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")
+	notifier.ping("質問が投稿されました！！GSの回答をお待ちください。")
     else
         @book_new = Book.new(book_params)
         render "new"
@@ -59,6 +67,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @user = @book.user
     @book_comment = BookComment.new
+    @comment = BookComment.where(params[:book_id])
   end
 
   def edit
