@@ -35,16 +35,6 @@ class BooksController < ApplicationController
       render :index, locals: { bookd: @bookd }
   end
 
-  def books
-    person_id_first = Person_idName.find(1)
-    @person_id = params[person_id] || book_first
-    @books = Book.where("person_id = ?", params[:person_id]).page(params[:page])
-  end
-
-  def book_search
-      person_id.name.all.map{|person_id_name| [person_id_name.name, person_id_name.id]}
-  end
-
   def new
     @book_new = Book.new
   end
