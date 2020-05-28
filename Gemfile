@@ -76,7 +76,7 @@ end
 
 gem 'acts-as-taggable-on', '~> 6.0'
 
-gem 'kaminari','~> 1.1.1'
+gem 'kaminari','~> 1.2.1'
 
 gem 'counter_culture', '~> 1.8'
 
